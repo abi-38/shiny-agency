@@ -1,48 +1,24 @@
-import DefaultPicture from '../assets/profile.jpg'
-import Card from '../components/Card'
-import styled from 'styled-components'
-
-const freelanceProfiles = [
-    {
-        name: 'Jane Doe',
-        jobTitle: 'Devops',
-        picture: DefaultPicture,
-    },
-    {
-        name: 'John Doe',
-        jobTitle: 'Developpeur frontend',
-        picture: DefaultPicture,
-    },
-    {
-        name: 'Jeanne Biche',
-        jobTitle: 'Développeuse Fullstack',
-        picture: DefaultPicture,
-    },
-]
-
-const CardsContainer = styled.div`
-    display: grid;
-    gap: 24px;
-    grid-template-rows: 350px 350px;
-    grid-template-columns: repeat(2, 1fr);
-`
-
+import StyledLink from '../utils/style/Atoms.js'
+import Profils from './Profils'
+import Titre from '../utils/style/Titre.js'
+import DivPage from '../utils/style/DivPage.js'
+import SimpleLink from '../utils/style/SimpleLink.js'
+  
 function Freelances() {
     return (
-        <div>
-            <h1>Page des freelances</h1>
-            <CardsContainer>
-                {freelanceProfiles.map((freelance, index) => 
-                    <Card 
-                        label={freelance.name}
-                        title={freelance.jobTitle}
-                        picture={freelance.picture}
-                        key={index}
-                    />
-                )}
-            </CardsContainer>
-            
-        </div>
+        <>
+            <DivPage>
+                <Titre>Les compétences dont vous avez besoins : UX Design, frontend, backend</Titre>
+                <StyledLink to="/freelances" $isFullLink >Découvrez nos profils</StyledLink>
+                <p>UX Design<br/>Le rôle est de Lorem ipsum dolor sit omet, consectetur adipiscing elit, sed do eiusmad tempor incididunt ut labare et.</p>
+                <br/>
+                <p>Frontend<br/>Le rôle est de Lorem ipsum dolor sit omet, consectetur adipiscing elit, sed do eiusmad tempor incididunt ut labare et.</p>
+                <SimpleLink to="/freelances">Découvrez nos profils dès maintenant !</SimpleLink> 
+            </DivPage>
+            <div>
+                <Profils />
+            </div>
+        </>
     )
   }
   

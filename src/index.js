@@ -10,27 +10,28 @@ import Freelances from './pages/Freelances'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-    div {
-      font-family: 'Trebuchet MS', Helvetica, sans-serif;
-      padding: 15px
-    }
+  div {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    padding: 15px;
+    background-color: #2f2e41;
+  }
 `
 
 // dans react-router v6 -> switch est remplacé par Routes
 // aussi <Route path="/" component={Home} /> -> <Route path='/welcome' element={<Home/>} />
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <GlobalStyle/>
-            <Header />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/survey/:questionNumber" element={<Survey />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/freelances" element={<Freelances />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </Router>
+      <Router>
+        <GlobalStyle/>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/survey/:questionNumber" element={<Survey />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/freelances" element={<Freelances />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Router>
     </React.StrictMode>,
 document.getElementById('root')
 )

@@ -1,23 +1,35 @@
-import { useState } from 'react'
 import styled from 'styled-components'
+import maquette from '../../assets/image.JPG'
+import StyledLink from '../../utils/style/Atoms.js'
+import HomeDiv from '../../utils/style/HomeDiv'
 
-const Baloon = styled.div`
-  height: 150px;
-  width: 150px;
-  border-radius: 150px;
-  background-color: red;
-  transform: scale(${({size}) => size})
+// const Baloon = styled.div`
+//   height: 150px;
+//   width: 150px;
+//   border-radius: 150px;
+//   background-color: red;
+//   transform: scale(${({size}) => size})
+// `
+// <Baloon size={size} />
+
+
+const HomeDivDiv = styled.div`
+  width: 25vw;
+  margin-right 15vw;
+  background-color: transparent;
 `
 
 function Home() {
-    const [size, setSize] = useState(1)
 
-    return (
-      <div>
-        <h1 onClick={() => setSize(size + 0.1)} >Page d'accueil 🏡</h1>
-        <Baloon size={size} />
-      </div>
-    )
-  }
+  return (
+    <HomeDiv>
+      <HomeDivDiv>
+        <h1>Repérez vos besoins, on s'occupe du reste, avec les meilleurs talents</h1>
+        <StyledLink to="/survey/1" $isFullLink >Faire un test</StyledLink>
+      </HomeDivDiv>
+      <img src={maquette} alt="maquette-d'illustration" />
+    </HomeDiv>
+  )
+}
   
   export default Home
