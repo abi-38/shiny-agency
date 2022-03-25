@@ -3,7 +3,6 @@ import colors from '../../utils/style/colors'
 
 const HomeDiv = styled.div`
   display: flex;
-  color: white;
   justify-content: center;
   align-items: center;
   margin-top: 5vw;
